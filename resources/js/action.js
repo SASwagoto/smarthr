@@ -1,4 +1,9 @@
-
+const sidebarToggle = document.querySelector('.toggleSidebar');
+const sidebar = document.querySelector('.sidebar');
+const logo = document.querySelector('.logo');
+const logoIcon = document.querySelector('.logo-icon');
+const logoDark = document.querySelector('.logoDark');
+const logolarge = document.querySelector('.logo_large');
 
 //icon toggle
 const iconToggle = (icon1, icon2) => {
@@ -77,15 +82,17 @@ document.addEventListener('click', function (event) {
 
 
 //Sidebar Toggle
-const sidebarToggle = document.getElementById('toggleSidebar');
-const sidebar = document.getElementById('sidebar');
 
 sidebarToggle.addEventListener('click', ()=>{
     if(sidebar.classList.contains('w-80'))
     {
         sidebar.classList.remove('w-80');
         sidebar.classList.add('w-20');
+        logolarge.classList.add('hidden');
+        logoIcon.classList.remove('hidden');
     }else{
         sidebar.classList.add('w-80');
+        logoIcon.classList.add('hidden');
+        logolarge.classList.remove('hidden');
     }
 });

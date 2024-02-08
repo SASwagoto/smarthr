@@ -23,11 +23,15 @@
     <body>
 
         <div class="flex h-screen w-screen">
-            <div x-data="{ open: true }" :class="{ 'w-80': open, 'w-20': !open } bg-gray-300 dark:bg-slate-800 duration-300">
+            <div class="w-80 bg-gray-300 sidebar dark:bg-slate-800 duration-300">
                 <div class="flex items-center m-auto justify-center py-2">
                     <a href="{{route('dashboard')}}">
                         <div>
-                            <img class="w-40" src="{{asset('assets/dashboard/images/logo-dark.png')}}" alt="">
+                            <div class="logo_large duration-300">
+                                <img class="w-full logo hidden dark:block px-3 duration-300" src="{{asset('assets/dashboard/images/logo-dark.png')}}" alt="">
+                                <img class="w-full logoDark block dark:hidden px-3 duration-300" src="{{asset('assets/dashboard/images/logo.png')}}" alt="">
+                            </div>
+                            <img class="w-full logo-icon hidden px-3" src="{{asset('assets/dashboard/images/logo-sm.png')}}" alt="">
                         </div>
                     </a>
                 </div>
@@ -35,7 +39,7 @@
             <div class="w-full bg-blue-400 duration-300 dark:bg-blue-900">
                 <div class="sticky flex justify-between items-center bg-gray-400 px-6 py-2 duration-300 dark:bg-sky-950">
                     <div class="flex items-center gap-4 text-white">
-                        <button type="button" onclick="{open = !open}" class="text-2xl text-white duration-300">
+                        <button type="button" class="toggleSidebar text-2xl text-white duration-300">
                             <i class="fa-solid fa-bars-staggered"></i>
                         </button>
                         <h2 class="text-2xl text-white">Dashboard</h2>
